@@ -64,4 +64,4 @@ def download_data():
 
 
 if __name__ == "__main__":
-    upload_data()
+    download_data()
