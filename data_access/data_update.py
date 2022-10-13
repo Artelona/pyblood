@@ -5,12 +5,12 @@ import os
 from google.cloud import storage
 from google.oauth2 import service_account
 
-
+secret_path = Path(".streamlit", "fifth-bonbon-365312-227b409203df.json")
 credentials = service_account.Credentials.from_service_account_file(
-    ".streamlit/pyblood-16bca61a00f2.json")
+    secret_path)
 client = storage.Client(credentials=credentials)
 
-BUCKET_NAME = "pyblood_bucket"
+BUCKET_NAME = "pyblood"
 BUCKET = client.bucket(BUCKET_NAME)
 DATA_ACCESS = 'google clood'
 
@@ -64,4 +64,4 @@ def download_data():
 
 
 if __name__ == "__main__":
-    download_data()
+    upload_data()

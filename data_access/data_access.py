@@ -26,7 +26,7 @@ if DATA_ACCESS != 'local':
         st.secrets["gcp_service_account"])
     client = storage.Client(credentials=credentials)
 
-    BUCKET_NAME = "pyblood_bucket"
+    BUCKET_NAME = "pyblood"
     BUCKET = client.bucket(BUCKET_NAME)
     DATA_ACCESS = 'google clood'
 
@@ -87,3 +87,6 @@ def load_ml_model(path):
 
     model = load(path)
     return model
+
+if __name__ == "__main__":
+    pass
